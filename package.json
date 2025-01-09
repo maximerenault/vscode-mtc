@@ -1,0 +1,41 @@
+{
+	"name": "mtc",
+	"publisher": "cbrissot-mrenault",
+	"displayName": "Mtc",
+	"description": "Syntax highlighting for mtc",
+	"version": "0.0.2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/maximerenault/vscode-mtc"},
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "mtc",
+				"aliases": [
+					"MTC",
+					"mtc"
+				],
+				"extensions": [
+					".mtc"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "mtc",
+				"scopeName": "source.mtc",
+				"path": "./syntaxes/mtc.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"size": 5839
+	}
+}
