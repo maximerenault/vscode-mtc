@@ -1,0 +1,107 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MTC",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#parenthesis"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.general.mtc",
+				"match": "(\\b(Data|M|Fichier)\\b:|\\b(Type|TypeDeNorme|NbIterMaxLineaire|Data|Nom|Precision|NomFichier|NbCapteurs|HAdaptation|IterMax|Resolution|Preconditionneur|Methode|Implicite|Galerkin|Thermique|PointFixe|EpsRegularisation|Entite|Dimension|Degres|Min|Max|Valeurs|Priorite|OperationsP1|Origine|Axes|NbChampsP1|Numero|Initialise|Operateur|Boucle|Fonction|Forme|Centre|NormaleSortante|Repere|Geometre|NomCompteur|NbChampSolution|NbChampParametre|Newton|Function0|Flag|Function1|Interpolator|Moyenner|ProduitVectoriel|IHM|NomFrequence|TypeFichier|Actif|AutoRestart)\\b=)"
+			},{
+				"name": "keyword.type.mtc",
+				"match": "(\\b(P1_Vecteur_Par|P0_Vecteur_Par|P1_Scalaire_Par|P0_Scalaire_Par|P0_Tenseur_Par|P0_Tenseur_Sym_Par|P1_Tenseur_Par|P1_Tenseur_Sym_Par|P0C_Scalaire_Par|P0C_Vecteur_Par|P0C_Tenseur_Par)\\b|\\b(Champ)\\b:|\\b(Champ|ChampCondition|ChampSolution|ChampParametre|ChampsParametres|ObjetChamp|NomClePrimaire|NomCleSecondaire)\\b=)"
+			},{
+				"name": "keyword.solveur.mtc",
+				"match": "(\\b(SimplexSolveurFonctionnel|ItemSolveur|SolveurLocal|Solveur|SolveurFrontiereLocal)\\b=|\\b(ISProduit|NonSmoothInterpolation|ModeleCapteur|ModeleZoneTable|ModeleParticulaire|ModeleFonctionnel|ModeleDeChamps|ModeleElementsFinis|ModeleMaillage|ModeleConstant|ModeleDeModeles|ModeleSortie|ModeleCLSurChamps|ModeleArithmetique|ModeleConditionnel|ModeleDeGeometres|ModeleDeMouvements|ModeleAnalytique|ModeleComportement|ModelePostProcess|ModeleIncremental|ModeleTemporel|ModeleFinSurTemps|Expression)\\b)"
+			},{
+				"name": "keyword.dependances.mtc",
+				"match": "\\b(Dependance|DependanceModifiable|Vars|Expr|Modele|Operation|Operations|ModeleIncrement|ModeleTerminaison|ModeleApresFin|ModeleAvantDebut|ModeleTrue|ModeleFalse|ModeleCL|ModeleLoi)\\b="
+			},{
+				"name": "keyword.maillage.mtc",
+				"match": "\\b(Maillage)\\b="
+			},{
+				"name": "keyword.valeuritem.mtc",
+				"match": "\\b(ValeurItem)\\b"
+			},{
+				"name": "keyword.prefix.mtc",
+				"match": "\\b(#)\\b"
+			},{
+				"name": "keyword.arithmetic.mtc",
+				"match": "\\b(\\^|\\*|/|%|\\+|-|=|\\+=|-=|\\*=|/=)\\b"
+			},{
+				"name": "keyword.comparison.mtc",
+				"match": "\\b(<|>|<=|>=|==|!=)\\b"
+			},{
+				"name": "keyword.boolean.mtc",
+				"match": "\\b(&&|\\|\\||and|or|\\^\\^|xor)\\b"
+			},{
+				"name": "keyword.stack.mtc",
+				"match": "\\b(dup|pop|swap)\\b"
+			},{
+				"name": "keyword.variable.mtc",
+				"match": "\\b(sto|=)\\b"
+			},{
+				"name": "keyword.ternary.mtc",
+				"match": "\\b([\\(\\)\\?:])\\b"
+			},{
+				"name": "keyword.delimiter.mtc",
+				"match": "\\b(;)\\b"
+			},{
+				"name": "keyword.constant.mtc",
+				"match": "\\b(PI|E|G)\\b"
+			},{
+				"name": "keyword.unary.mtc",
+				"match": "\\b(abs|exp|exp2|expm1|ln|log|log10|ln2|log2|log1p|sqrt|cbrt|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|asinh|acosh|atanh|erf|erfc|tgamma|lgamma|ceil|floor|trunc|round|sgn|sq|cb|!)\\b"
+			},{
+				"name": "keyword.binary.mtc",
+				"match": "\\b(min|max|pow|hypot|atan2)\\b"
+			}
+		]
+		},
+		"comment": {
+			"name": "comment.line.mtc",
+			"begin": "(//)+",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.mtc"
+				}
+			},
+			"end": "$"
+		},
+		"parenthesis": {
+			"patterns": [{
+				"name": "parenthesis.mtc",
+				"match": "({|})"
+			}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.mtc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mtc",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"semanticTokenColors": {
+		"keyword.maillage.mtc": "#70350b"
+	},
+	"scopeName": "source.mtc"
+}
